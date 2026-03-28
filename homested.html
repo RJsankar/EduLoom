@@ -900,8 +900,8 @@
   .secondary-section {
     background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
     border-top: 1px solid var(--border);
-    flex-shrink: 0;
     padding: 18px 20px 24px;
+    display: block; /* always visible on desktop; JS controls mobile */
   }
   .secondary-layout {
     display: grid;
@@ -3547,11 +3547,15 @@
       </button>
       <button class="mobile-nav-item" id="mnav-pod" onclick="mobileNav('pod')">
         <span class="mobile-nav-icon">🤝</span>
-        <span class="mobile-nav-label">Pod</span>
+        <span class="mobile-nav-label">Community</span>
       </button>
       <button class="mobile-nav-item" id="mnav-progress" onclick="mobileNav('progress')">
         <span class="mobile-nav-icon">📊</span>
         <span class="mobile-nav-label">Progress</span>
+      </button>
+      <button class="mobile-nav-item" id="mnav-explore" onclick="mobileNav('explore')">
+        <span class="mobile-nav-icon">✦</span>
+        <span class="mobile-nav-label">Explore</span>
       </button>
     </div>
   </nav>
@@ -5889,35 +5893,44 @@ function mobileNav(section) {
   setMobileNavActive(section);
   const panelLeft = document.getElementById('panel-left');
   const panelCenter = document.getElementById('panel-center');
+  const appMain = document.querySelector('.app-main');
   const secondarySection = document.getElementById('secondary-section');
 
+  // Helper: show/hide app-main wrapper
+  const showMain = () => { if (appMain) appMain.style.display = 'flex'; };
+  const hideMain = () => { if (appMain) appMain.style.display = 'none'; };
+
   if (section === 'today') {
+    showMain();
     panelLeft.style.display = 'flex';
     panelLeft.style.width = '100%';
     panelCenter.style.display = 'none';
     secondarySection.style.display = 'none';
   } else if (section === 'lesson') {
+    showMain();
     panelLeft.style.display = 'none';
     panelCenter.style.display = 'flex';
     secondarySection.style.display = 'none';
   } else if (section === 'pod') {
-    panelLeft.style.display = 'none';
-    panelCenter.style.display = 'none';
+    hideMain();
     secondarySection.style.display = 'block';
     switchTab('pod');
   } else if (section === 'progress') {
-    panelLeft.style.display = 'none';
-    panelCenter.style.display = 'none';
+    hideMain();
     secondarySection.style.display = 'block';
     switchTab('progress');
     renderProgressContent();
+  } else if (section === 'explore') {
+    hideMain();
+    secondarySection.style.display = 'block';
+    switchTab('parent');
   }
   saveState();
 }
 
 function setMobileNavActive(section) {
   state.mobileSection = section;
-  ['today','lesson','pod','progress'].forEach(s => {
+  ['today','lesson','pod','progress','explore'].forEach(s => {
     const el = document.getElementById(`mnav-${s}`);
     if (el) el.classList.toggle('active', s === section);
   });
@@ -5948,11 +5961,13 @@ function syncLayoutMode() {
   if (!panelLeft || !panelCenter || !secondarySection) return;
 
   if (!isMobile) {
+    const appMain = document.querySelector('.app-main');
+    if (appMain) appMain.style.display = 'flex';
     panelLeft.style.display = '';
     panelLeft.style.width = '';
     panelCenter.style.display = 'flex';
     panelCenter.classList.remove('mobile-active');
-    secondarySection.style.display = '';
+    secondarySection.style.display = 'block'; /* always show on desktop */
     return;
   }
 

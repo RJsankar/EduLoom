@@ -1,7 +1,13 @@
 # Homested — AI-Powered Homeschool OS
 
-> **Live Demo → [homested-demo.vercel.app](https://homested-demo.vercel.app)**
-> **GitHub → [github.com/RJsankar/EduLoom](https://github.com/RJsankar/EduLoom)**
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-homested--demo.vercel.app-4F46E5?style=for-the-badge&logo=vercel&logoColor=white)](https://homested-demo.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-RJsankar%2FEduLoom-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RJsankar/EduLoom)
+
+| | |
+|---|---|
+| 🌐 **Live Demo** | https://homested-demo.vercel.app |
+| 📦 **Repository** | https://github.com/RJsankar/EduLoom |
+| 🚀 **Deployed on** | [Vercel](https://vercel.com) |
 
 Homested is a single-file interactive demo prototype for an AI-powered homeschool operating system. It gives parents the curriculum, schedule, and community to teach their kids with total confidence — no setup, no backend, no auth.
 

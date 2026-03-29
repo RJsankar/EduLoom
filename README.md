@@ -1,235 +1,185 @@
-# EduLoom
+# Homested — AI-Powered Homeschool OS
 
-EduLoom is a single-file frontend prototype for an AI-powered homeschool operating system. It combines a marketing landing page with an interactive family learning dashboard designed for planning, instruction, community coordination, motivation, and portfolio tracking.
+> **Live Demo → [homested-demo.vercel.app](https://homested-demo.vercel.app)**
+> **GitHub → [github.com/RJsankar/EduLoom](https://github.com/RJsankar/EduLoom)**
 
-## Product Snapshot
+Homested is a single-file interactive demo prototype for an AI-powered homeschool operating system. It gives parents the curriculum, schedule, and community to teach their kids with total confidence — no setup, no backend, no auth.
 
-### Current household setup
-- Family label: `Rao-Miller family`
-- Learners: `Anaya` and `Lucas`
-- Experience type: frontend-only prototype with mocked data and simulated AI flows
+---
 
-### Core experience
-- Landing page for product positioning and early-access messaging
-- Daily learning workspace with lesson schedule and lesson viewer
-- Family-level parent dashboard for aggregated insights and quick actions
-- Child-specific learning, rewards, tutor, portfolio, and community surfaces
-- Responsive UI that supports both desktop and mobile layouts
+## What's Inside
 
-## Navigation and Layout
+| Section | What it does |
+|---|---|
+| 🏠 Landing Page | Product hero, value props, social proof, CTA |
+| 📅 Daily Dashboard | 3-column lesson planner — schedule, viewer, weekly grid |
+| 🤖 AI Adjust | Reschedule the day around real-life disruptions |
+| 📍 Pod Community | Nearby families, skill-sharing, events, RSVPs |
+| 📊 Progress Tracker | Per-child subject bars, AI insight, activity heatmap |
+| 🃏 AI Flashcards | Generate flip cards from any topic + audio mode |
+| 🤖 AI Tutor | Chat-based homework help + SEL mood journal |
+| 🏆 Rewards | Streaks, coins, badges, and a reward store |
+| 📁 Portfolio | Report cards, work samples, VR field trip previews |
+| 🛍️ Marketplace | Resources, specialist tutors, co-op projects, multilingual packs |
 
-### Landing page
-- Branded hero with CTA buttons and social-proof messaging
-- Visual product preview cards
-- Value proposition sections for curriculum, flexibility, and community
-- Gradient-heavy visual treatment with hover states and responsive behavior
+---
 
-### App shell
-- Sticky app header with date, streak indicator, avatar, and notification badge
-- Three-panel desktop learning workspace
-- Dedicated mobile bottom navigation for core lesson flow
-- Grouped secondary navigation organized into:
-  - `Community`
-  - `Learning`
-  - `Family`
-- Dedicated tabs for:
-  - `Parent Dashboard`
-  - `Pod Community`
-  - `Progress Tracker`
-  - `AI Flashcards`
-  - `AI Tutor`
-  - `Rewards`
-  - `Portfolio`
-  - `Marketplace`
+## Pre-Loaded Demo Family
 
-### Learner switching
-- Shared child switchers across schedule, weekly planning, and progress surfaces
-- Child-aware rendering for:
-  - lesson schedule
-  - weekly grid
-  - progress tracker
-  - rewards dashboard
-  - portfolio header/content
-  - AI tutor context
+**The Hendersons** — no login required, lands directly in the experience.
 
-## Family-Level Features
+| Child | Age | Grade | Colour |
+|---|---|---|---|
+| Emma | 10 | Grade 5 | Indigo |
+| Liam | 7 | Grade 2 | Green |
 
-### Parent dashboard
-- Family-level completion summary across both learners
-- Combined streak and planned learning hours
-- Family readiness score for documentation and exam alignment
-- Aggregated subject averages across children
-- Weekly trend sparklines for each learner
-- AI recommendation cards driven by simple threshold logic
-- Compliance/export preview cards
-- Quick actions for:
-  - AI schedule adjustment
-  - portfolio preview
-  - pod review
-  - marketplace access
-  - tutor launch
+**Emma's lessons today:** Math (Fractions & Decimals) · Science (Solar System) · English (Creative Writing)
+**Liam's lessons today:** Reading (Phonics Blends) · Math (Addition to 20) · Art (Finger Painting)
 
-### AI schedule adjustment
-- Modal-based “AI Adjust Schedule” workflow
-- Input area for appointments, fatigue, or family changes
-- Simulated AI-generated rescheduling suggestions
-- Option to apply the adjusted plan or keep the original schedule
-- Modal close support via button, overlay click, and `Esc`
+---
 
-## Daily Learning Experience
+## Feature Breakdown
 
-### Daily schedule
-- Left-side lesson timeline for the active learner
-- Subject color coding across lessons
-- Lesson states for upcoming, in-progress, and completed work
-- Contextual lesson actions such as `Start`, `Resume`, and `Review`
-- Completed lesson styling and selected lesson highlighting
+### 📅 Daily Learning Experience
 
-### Lesson viewer
-- Detailed lesson page populated from in-file data
-- Child name, grade, subject label, and progress state
-- Materials list and learning objectives
-- Step-by-step instructional flow
-- Optional video and worksheet blocks
-- Notes area and lesson completion state
+- **Lesson timeline** — vertical schedule with subject colour-coded cards, time labels, and duration badges
+- **Lesson states** — Upcoming / In Progress (pulsing dot) / Complete (green ✓)
+- **Lesson viewer** — objectives, step-by-step instructions, video placeholder, worksheet download
+- **Mark Complete** — confetti burst, status update, next-lesson prompt
+- **Quick add** — add a custom lesson inline from the schedule panel
+- **Search** — filter lessons by keyword within the schedule
 
-### Completion flow
-- “Mark complete” interaction for active lesson
-- Live completed lesson counter
-- Confetti celebration animation
-- Automatic next-lesson prompt
-- End-of-day completion state when all lessons are done
+### 🗓 Weekly Overview
 
-### Weekly overview
-- Weekly learning grid for the active learner
-- Subject-based chips and color coding
-- Current-day visual emphasis
+- Mon–Fri grid with subject chips colour-coded by type
+- Today's column highlighted
+- Child switcher syncs with left schedule panel
+- **AI Adjust Schedule** — modal flow that simulates intelligent rescheduling
 
-## Community and Support Surfaces
+### 🤖 AI Schedule Adjustment
 
-### Pod Community
-- Redesigned learner-aware pod dashboard
-- Family match cards with skills, children, and distance
-- Request connection interactions with persistent state
-- Upcoming event cards with RSVP actions
-- Co-op and local-learning discovery patterns
+- Free-text input for disruptions (appointments, illness, family events)
+- 1.5s simulated AI processing → returns 3 rescheduled time slots
+- Apply changes (updates live schedule) or keep original
 
-### AI Flashcards
-- Topic input area for generating quick study prompts
-- Four interactive flip cards with 3D flip behavior
-- Audio mode toggle
-- Placeholder PDF export action for flashcard sets
+### 📍 Pod Community
 
-### AI Tutor
-- Mock chat interface with a pre-seeded example exchange
-- Subject selector for `Math`, `Science`, `English`, and `History`
-- Simulated AI replies with typing state
-- Subject-aware conversation seeding instead of always showing the same math example
-- SEL mood journal with emoji check-in and notes area
-- Utility actions like worksheet generation and read-aloud trigger states
+- Family match cards — name, distance, skills they can teach, children's ages
+- **Request Connection** — one-click, persists state
+- Upcoming events — date, attending count, **RSVP** button (persists state)
 
-### Marketplace
-- Featured curriculum resource cards
-- “Add to Curriculum” interactions
-- Specialist tutor booking cards
-- Pod co-op project cards with join interactions
-- Multilingual content pack switcher with feedback states
+### 📊 Progress Tracker
 
-## Learner Progress and Motivation
+- Per-subject progress bars with colour fill and percentage
+- Status labels: `2 lessons ahead 🚀` / `On track ✓` / `1 lesson behind ⚠️`
+- Subject filter chips (All / Math / English / Science / History)
+- **AI Insight card** — personalised curriculum nudge per child
+- **4-week activity heatmap** — lighter/darker squares by day
 
-### Progress Tracker
-- Redesigned child-specific progress dashboard
-- Horizontal subject cards with momentum bars and status pills
-- Subject filters
-- AI insight card with personalized curriculum suggestion
-- Compact 4-week activity heatmap
-- Learner-specific rendering so the dashboard updates correctly when switching children
+### 🃏 AI Flashcards
 
-### Rewards
-- Learner-specific rewards dashboard
-- Summary tiles for streak, coins, and badge count
-- Animated earned badge cards with stagger, bounce, and shimmer effects
-- Softer locked badge states for clearer hierarchy
-- Reward store with redeem interactions
-- Daily challenge card
+- Topic textarea → **Generate Flashcards** button (1s simulated load)
+- 4 interactive flip cards with 3D CSS transform on click
+- Pre-loaded Q&A pairs relevant to Emma's current lessons
+- **Audio Mode toggle** — simulates text-to-speech readiness
+- PDF download placeholder
 
-## Portfolio and Documentation
+### 🤖 AI Tutor
 
-### Portfolio
-- Child-specific learning portfolio header
-- Spring term report card section with grades, lesson counts, and statuses
-- Placeholder PDF download action for report exports
-- Redesigned work-sample gallery with stronger card hierarchy
-- Modal-based sample preview interactions
-- VR field trip preview cards for:
-  - Museum
-  - NASA
-  - Egypt
+- Subject selector pills: Math · Science · English · History
+- Chat interface with pre-seeded example exchange
+- Send a message → typing indicator → mock AI response
+- **SEL Mood Journal** — 5 emoji moods + notes field + save confirmation
+- Worksheet generator and read-aloud trigger states
 
-### Compliance and export readiness
-- Parent dashboard attendance summary
-- Portfolio preview access from family dashboard
-- Prototype readiness scoring for documentation and certification flows
-- Placeholder export actions for PDFs and report artifacts
+### 🏆 Rewards
 
-## UI and Interaction Improvements
+- Stats row: streak days · total coins · badge count
+- **Badge board** — 6 earned (animated) + 2 locked with unlock conditions
+- **Coin store** — Extra Art Time · Choose a Movie · Skip a Worksheet (redeemable, coins decrement)
+- **Daily Challenge card** — bonus coin goal tied to lesson completion
 
-### Visual redesign work completed
-- Notification badge clipping fix in the top nav
-- Grouped secondary navigation replacing the crowded tab row
-- Improved portfolio section hierarchy and showcase presentation
-- Redesigned progress tracker layout
-- Redesigned reward store into better horizontal cards
-- Animated rewards badge board
-- Updated parent dashboard as a dedicated family surface
+### 📁 Portfolio
 
-### Responsive behavior
-- Desktop-first multi-panel layout
-- Mobile bottom navigation for core lesson flow
-- Mobile-safe secondary tab visibility
-- Wrapped and grouped tab behavior for smaller screens
-- Responsive card/grid adjustments across major sections
+- Child-specific header and term label
+- **Spring Term Report Card** — subject grades, lesson counts, status
+- PDF download placeholder
+- **Work sample gallery** — 4 recent artifacts with modal preview
+- **VR Field Trip previews** — Natural History Museum · NASA Space Center · Ancient Egypt (aligned to active lessons)
 
-## Data Modeled in the Prototype
+### 🛍️ Marketplace
 
-- Two learners with separate schedules and progress models
-- Daily lesson schedules and lesson metadata
-- Weekly subject plans
-- Per-child progress percentages and AI insight text
-- Family-level aggregate analytics and recommendations
-- Rewards, coins, badges, and streak data
-- Portfolio report card and work sample content
-- Pod families and upcoming community events
-- Flashcard prompts and answers
-- Tutor sample conversations and SEL states
-- Marketplace resources, tutors, co-ops, and multilingual packs
+- Search bar + filter pills (All / Videos / Worksheets / Kits / Tutors)
+- Resource cards — creator, price, star rating, **Add to Curriculum** (persists state)
+- **Specialist tutor booking** — 3 tutors with rate + **Book Session** (persists state)
+- **Pod Co-op Projects** — 2 active group research projects with **Join** interaction
+- **Multilingual Content Packs** — English · Spanish · Mandarin · Hindi · French switcher
+
+---
+
+## Subject Colour System
+
+| Subject | Colour | Hex |
+|---|---|---|
+| Math | Indigo | `#4F46E5` |
+| Science | Sky Blue | `#0EA5E9` |
+| English / Reading | Green | `#10B981` |
+| History / Geography | Amber | `#F59E0B` |
+| Art / Craft / Music | Pink | `#EC4899` |
+| PE / Free | Gray | `#6B7280` |
+
+---
+
+## Layout & Responsiveness
+
+### Desktop (≥ 1024px)
+- **Left panel** (280px) — lesson schedule + child switcher
+- **Centre panel** (flex) — lesson viewer or welcome card
+- **Right panel** (300px) — weekly overview grid + AI Adjust button
+- **Below** — scrollable secondary workspace with sidebar nav grouped into Community / Learning / Family
+
+### Tablet (768–1023px)
+- 2-column layout, right panel collapses
+- Secondary sidebar stacks above content
+
+### Mobile (< 768px)
+- Bottom navigation: **Today · Lesson · Community · Progress · Explore**
+- Today → full-width lesson timeline
+- Lesson → full-screen lesson viewer
+- Explore → full secondary workspace (all 8 tabs via group switcher)
+
+---
 
 ## Tech Stack
 
-- Plain HTML
-- Embedded CSS
-- Vanilla JavaScript
-- No build tools
-- No backend dependencies
+- **Pure HTML** — single file, zero dependencies
+- **Embedded CSS** — custom design system, CSS variables, animations
+- **Vanilla JavaScript** — state object, event handlers, DOM rendering
+- **Google Fonts** — Inter (400, 500, 600, 700)
+- **No build tools · No backend · No auth**
 
-## Project File
+---
 
-- [homested.html](/Users/ramyasankar/Documents/RJ Hackathon/Homeschooling/homested.html): landing page, app UI, styling, data models, and interaction logic
-
-## How to Run
-
-Open [homested.html](/Users/ramyasankar/Documents/RJ Hackathon/Homeschooling/homested.html) directly in a browser.
-
-You can also serve the folder locally:
+## Running Locally
 
 ```bash
+# Option 1 — open directly
+open homested.html
+
+# Option 2 — serve locally
+npx serve .
+# then visit http://localhost:3000/homested.html
+
+# Option 3 — Python
 python3 -m http.server 8000
+# then visit http://localhost:8000/homested.html
 ```
 
-Then open `http://localhost:8000/homested.html`.
+---
 
 ## Prototype Notes
 
-- This is a frontend prototype with mocked content and simulated AI behavior
-- PDF downloads, tutor responses, schedule adjustment, worksheet generation, and several export flows use placeholder interactions
-- Internal data keys still use legacy child IDs under the hood, while the visible UI shows the updated names `Anaya` and `Lucas`
+- All AI flows (schedule adjustment, flashcard generation, tutor replies) are **simulated** — realistic delays and mock responses, no API calls
+- PDF downloads, VR previews, worksheet generation, and audio are **placeholder interactions**
+- State is held in memory — refreshing resets to the default demo state
+- Child names in the visible UI are **Emma** and **Liam** (Henderson family)
